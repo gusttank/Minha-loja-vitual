@@ -1,21 +1,36 @@
-# Gusttavo Corres - Site final
+# Gusttavo Corres - versão online com Firebase preparado
 
-Loja online estática pronta para GitHub Pages ou Vercel.
+Incluído nesta versão:
+- Banner oficial dentro da pasta assets
+- Imagens base de produtos
+- Loja responsiva
+- Carrinho e checkout com Pix manual
+- WhatsApp integrado
+- Login/cadastro com Firebase Auth preparado
+- Login Google real preparado
+- Minha conta e histórico de pedidos
+- Firestore preparado para produtos, pedidos, usuários, avaliações e newsletter
+- Painel admin conectado ao Firestore quando configurado
+- Upload de imagem de produto pelo Firebase Storage
+- Estoque online sincronizado quando Firebase estiver ativo
+- Cupons GC10 e FRETE15
+- Frete estimado por CEP
+- Favoritos
+- Produtos vistos recentemente
+- Rastreio por número do pedido
+- Políticas da loja
 
-## Dados configurados
-- Loja: Gusttavo Corres
-- Slogan: Trajado da cabeça aos pés
-- WhatsApp: 11 91303-4323
-- Pix: ad586de2-610a-4874-bb22-ee6a8cbe68c2
-- Prazo: 25 a 35 dias
-- Senha admin: Gu040310@
+## Para ativar 100% online
+1. Crie um projeto no Firebase.
+2. Ative Authentication > Email/senha e Google.
+3. Ative Firestore Database.
+4. Ative Storage.
+5. Copie a configuração Web do Firebase.
+6. Cole os dados no arquivo `firebase-config.js`.
+7. Troque `window.GC_ADMIN_EMAIL` para seu e-mail admin.
+8. Suba todos os arquivos no GitHub Pages.
 
-## Como subir no GitHub
-1. Crie ou abra o repositório no GitHub.
-2. Clique em **Add file > Upload files**.
-3. Envie `index.html`, `admin.html`, `styles.css`, `script.js` e `README.md`.
-4. Clique em **Commit changes**.
-5. Se usar Vercel, importe o repositório e faça o deploy.
+Sem Firebase configurado, o site continua funcionando em modo local, mas produtos e pedidos ficam apenas no aparelho de quem usou.
 
-## Importante
-Este site usa carrinho, produtos e admin com LocalStorage do navegador. Para uma loja profissional com pedidos salvos online, login real e Pix automático, será necessário Firebase + API Pix em backend.
+## Admin
+Abra `admin.html` e use a senha: `Gu040310@`

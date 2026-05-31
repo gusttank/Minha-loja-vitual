@@ -1,81 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gusttavo Corres | Moda Masculina</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gusttavo Corres | Trajado da cabeça aos pés</title>
+<meta name="description" content="Loja online Gusttavo Corres: roupas, kits e acessórios. Pix manual, pedidos pelo WhatsApp e painel administrativo.">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="topbar">
-    <div class="brand">
-      <div class="logo">GC</div>
-      <div>
-        <strong>Gusttavo Corres</strong>
-        <span>Moda masculina</span>
-      </div>
-    </div>
-    <a class="whatsapp" target="_blank" href="https://wa.me/5511913034323">WhatsApp</a>
-  </header>
-
-  <main>
-    <section class="hero">
-      <img class="banner" src="banner.png" alt="Banner Gusttavo Corres" />
-      <div class="hero-content">
-        <p class="tag">Pix manual • Sob encomenda • Prazo 25 a 35 dias</p>
-        <h1>Trajado da cabeça aos pés</h1>
-        <p>Escolha os produtos, adicione ao carrinho e finalize o pedido pelo WhatsApp. Pagamento por Pix manual.</p>
-        <div class="actions">
-          <a href="#produtos" class="btn primary">Ver produtos</a>
-          <a href="#checkout" class="btn">Ir para checkout</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="produtos" class="section">
-      <h2>Produtos</h2>
-      <p class="muted">Você pode trocar os produtos pelo painel admin editando o arquivo <b>script.js</b>.</p>
-      <div id="lista-produtos" class="grid"></div>
-    </section>
-
-    <section class="section cart-box" id="checkout">
-      <h2>Carrinho</h2>
-      <div id="carrinho"></div>
-      <div class="total">
-        <span>Total</span>
-        <strong id="total">R$ 0,00</strong>
-      </div>
-
-      <form id="form-pedido" class="checkout">
-        <input required id="nome" placeholder="Seu nome" />
-        <input required id="telefone" placeholder="Seu telefone" />
-        <input required id="endereco" placeholder="Endereço de entrega" />
-        <textarea id="observacao" placeholder="Observação: tamanho, cor, modelo..."></textarea>
-        <button type="submit" class="btn primary full">Comprar pelo WhatsApp</button>
-      </form>
-
-      <div class="pix">
-        <h3>Pix manual</h3>
-        <p>Chave Pix:</p>
-        <code id="pix">ad586de2-610a-4874-bb22-ee6a8cbe68c2</code>
-        <button class="btn" onclick="copiarPix()">Copiar chave Pix</button>
-      </div>
-    </section>
-
-    <section class="section policies">
-      <h2>Políticas da loja</h2>
-      <p>Produtos vendidos sob encomenda. Prazo médio de entrega: <b>25 a 35 dias</b>.</p>
-      <p>Não fazemos troca por arrependimento, caimento, tamanho grande/pequeno escolhido pelo cliente ou por não ter curtido pessoalmente.</p>
-      <p>Antes de finalizar o pedido, confira tamanho, cor, modelo e endereço.</p>
-    </section>
-  </main>
-
-  <footer>
-    <p>© Gusttavo Corres — Trajado da cabeça aos pés</p>
-    <p>WhatsApp: 11 91303-4323</p>
-  </footer>
-
-  <a class="floating" target="_blank" href="https://wa.me/5511913034323">Comprar pelo WhatsApp</a>
-  <script src="script.js"></script>
-</body>
-</html>
+<header class="topbar">
+  <a class="brand" href="#home"><span>GC</span><b>Gusttavo Corres</b></a>
+  <nav><a href="#produtos">Produtos</a><a href="#rastreio">Rastreio</a><a href="#politicas">Políticas</a><a href="admin.html">Admin</a></nav>
+  <button id="openAccount" class="ghost">Minha conta</button><button id="openCart" class="cart">Carrinho <em id="cartCount">0</em></button>
+</header>
+<main>
+<section id="home" class="hero">
+  <div class="heroText"><p class="pill">Pix manual • sob encomenda • 25 a 35 dias</p><h1>Trajado da cabeça aos pés.</h1><p>Peças selecionadas no estilo do corre, com checkout rápido, cupons, favoritos, avaliações, rastreio e atendimento direto no WhatsApp.</p><div><a href="#produtos" class="btn">Comprar agora</a><a href="https://wa.me/5511913034323" target="_blank" class="btn outline">WhatsApp</a></div></div>
+  <img class="realBanner" src="assets/banner-gusttavo-corres.svg" alt="Banner Gusttavo Corres">
+</section>
+<section class="benefits"><div><b>Frete</b><span>Cálculo estimado por CEP</span></div><div><b>Cupons</b><span>Use GC10 ou FRETE15</span></div><div><b>Rastreio</b><span>Pedido e código no painel</span></div><div><b>Favoritos</b><span>Salve peças para depois</span></div></section>
+<section id="produtos" class="wrap"><div class="sectionHead"><div><h2>Produtos</h2><p>Filtre por tamanho, marca, preço e categoria.</p></div><input id="search" placeholder="Buscar produto..."></div>
+<div class="filters"><select id="cat"><option value="">Categoria</option></select><select id="size"><option value="">Tamanho</option></select><select id="brand"><option value="">Marca</option></select><select id="sort"><option value="featured">Destaques</option><option value="low">Menor preço</option><option value="high">Maior preço</option></select></div><div id="products" class="grid"></div></section>
+<section class="wrap split"><div><h2>Produtos vistos recentemente</h2><div id="recent" class="miniGrid"></div></div><div><h2>Favoritos</h2><div id="wishlist" class="miniGrid"></div></div></section>
+<section id="rastreio" class="wrap track"><h2>Rastrear pedido</h2><p>Digite o número do pedido para consultar o status.</p><div class="inline"><input id="trackInput" placeholder="Ex: GC12345"><button id="trackBtn" class="btn">Rastrear</button></div><div id="trackResult" class="result"></div></section>
+<section class="wrap"><h2>Avaliações dos clientes</h2><div id="reviews" class="reviews"></div></section>
+<section id="politicas" class="policies"><div class="wrap"><h2>Políticas da loja</h2><div class="policyGrid"><article><h3>Prazo</h3><p>Produtos sob encomenda com prazo médio de 25 a 35 dias úteis.</p></article><article><h3>Trocas</h3><p>Não fazemos troca por não ter curtido pessoalmente, caimento, tamanho grande ou pequeno.</p></article><article><h3>Pagamento</h3><p>Pix manual. O cliente envia comprovante e o pedido é aprovado no painel admin.</p></article><article><h3>Privacidade</h3><p>Dados usados apenas para cadastro, entrega, contato e histórico de pedidos.</p></article></div></div></section>
+<section class="wrap newsletter"><h2>Receba promoções</h2><div class="inline"><input id="emailPromo" placeholder="Seu e-mail"><button id="saveEmail" class="btn">Cadastrar</button></div></section>
+</main>
+<footer>© 2026 Gusttavo Corres • WhatsApp: 11 91303-4323 • Pix: ad586de2-610a-4874-bb22-ee6a8cbe68c2</footer>
+<aside id="cartPanel" class="panel"><button class="x" data-close>×</button><h2>Carrinho</h2><div id="cartItems"></div><input id="coupon" placeholder="Cupom"><button id="applyCoupon" class="ghost full">Aplicar cupom</button><input id="cep" placeholder="CEP para calcular frete"><button id="calcShip" class="ghost full">Calcular frete</button><div id="totals"></div><button id="checkout" class="btn full">Finalizar pedido</button></aside>
+<aside id="accountPanel" class="panel"><button class="x" data-close>×</button><h2>Minha conta</h2><div id="accountBox"></div></aside>
+<div id="modal" class="modal"></div>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-storage-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script src="app.js"></script>
+</body></html>
