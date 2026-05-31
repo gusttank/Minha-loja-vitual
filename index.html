@@ -1,110 +1,81 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gusttavo Corres | Trajado da cabeça aos pés</title>
-  <meta name="description" content="Loja Gusttavo Corres - roupas sob encomenda, trajado da cabeça aos pés." />
-  <link rel="stylesheet" href="styles.css" />
+  <title>Gusttavo Corres | Moda Masculina</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="#home" aria-label="Gusttavo Corres">
-      <span class="brand-mark">GC</span>
-      <span><strong>Gusttavo Corres</strong><small>Trajado da cabeça aos pés</small></span>
-    </a>
-    <nav>
-      <a href="#produtos">Produtos</a>
-      <a href="#checkout">Checkout</a>
-      <a href="#politicas">Políticas</a>
-      <a href="admin.html">Admin</a>
-    </nav>
-    <button class="cart-btn" id="openCart">Carrinho <span id="cartCount">0</span></button>
+    <div class="brand">
+      <div class="logo">GC</div>
+      <div>
+        <strong>Gusttavo Corres</strong>
+        <span>Moda masculina</span>
+      </div>
+    </div>
+    <a class="whatsapp" target="_blank" href="https://wa.me/5511913034323">WhatsApp</a>
   </header>
 
-  <main id="home">
+  <main>
     <section class="hero">
-      <div class="hero-card">
-        <p class="eyebrow">Loja oficial</p>
-        <h1>Gusttavo Corres</h1>
-        <p class="slogan">Trajado da cabeça aos pés</p>
-        <p class="hero-text">Roupas selecionadas sob encomenda, com atendimento direto pelo WhatsApp e pagamento via Pix.</p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#produtos">Ver produtos</a>
-          <a class="btn ghost" href="https://wa.me/5511913034323" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+      <img class="banner" src="banner.png" alt="Banner Gusttavo Corres" />
+      <div class="hero-content">
+        <p class="tag">Pix manual • Sob encomenda • Prazo 25 a 35 dias</p>
+        <h1>Trajado da cabeça aos pés</h1>
+        <p>Escolha os produtos, adicione ao carrinho e finalize o pedido pelo WhatsApp. Pagamento por Pix manual.</p>
+        <div class="actions">
+          <a href="#produtos" class="btn primary">Ver produtos</a>
+          <a href="#checkout" class="btn">Ir para checkout</a>
         </div>
       </div>
-      <div class="hero-banner">
-        <div class="gc-logo">GC</div>
-        <h2>Gusttavo Corres</h2>
-        <p>Trajado da cabeça aos pés</p>
-        <span>Preto • Vermelho • Branco</span>
+    </section>
+
+    <section id="produtos" class="section">
+      <h2>Produtos</h2>
+      <p class="muted">Você pode trocar os produtos pelo painel admin editando o arquivo <b>script.js</b>.</p>
+      <div id="lista-produtos" class="grid"></div>
+    </section>
+
+    <section class="section cart-box" id="checkout">
+      <h2>Carrinho</h2>
+      <div id="carrinho"></div>
+      <div class="total">
+        <span>Total</span>
+        <strong id="total">R$ 0,00</strong>
+      </div>
+
+      <form id="form-pedido" class="checkout">
+        <input required id="nome" placeholder="Seu nome" />
+        <input required id="telefone" placeholder="Seu telefone" />
+        <input required id="endereco" placeholder="Endereço de entrega" />
+        <textarea id="observacao" placeholder="Observação: tamanho, cor, modelo..."></textarea>
+        <button type="submit" class="btn primary full">Comprar pelo WhatsApp</button>
+      </form>
+
+      <div class="pix">
+        <h3>Pix manual</h3>
+        <p>Chave Pix:</p>
+        <code id="pix">ad586de2-610a-4874-bb22-ee6a8cbe68c2</code>
+        <button class="btn" onclick="copiarPix()">Copiar chave Pix</button>
       </div>
     </section>
 
-    <section class="notice">
-      <strong>Importante:</strong> produtos vendidos sob encomenda. Prazo médio de entrega: <b>25 a 35 dias</b>.
-    </section>
-
-    <section class="section" id="produtos">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">Catálogo</p>
-          <h2>Produtos em destaque</h2>
-        </div>
-        <input id="search" class="search" placeholder="Buscar produto..." />
-      </div>
-      <div id="productGrid" class="grid"></div>
-    </section>
-
-    <section class="section checkout-section" id="checkout">
-      <div>
-        <p class="eyebrow">Pagamento</p>
-        <h2>Checkout com Pix manual</h2>
-        <p>Após escolher os produtos, finalize o pedido. Você receberá a chave Pix e poderá enviar o comprovante pelo WhatsApp.</p>
-      </div>
-      <div class="pix-card">
-        <span>Chave Pix</span>
-        <strong id="pixKey">ad586de2-610a-4874-bb22-ee6a8cbe68c2</strong>
-        <button class="btn primary" id="copyPix">Copiar chave Pix</button>
-      </div>
-    </section>
-
-    <section class="section policies" id="politicas">
-      <p class="eyebrow">Políticas da loja</p>
-      <h2>Encomendas, prazos e trocas</h2>
-      <div class="policy-grid">
-        <article><h3>Prazo</h3><p>As roupas são vendidas sob encomenda, com prazo médio de 25 a 35 dias.</p></article>
-        <article><h3>Trocas</h3><p>Não realizamos troca por desistência, por não curtir a roupa pessoalmente, caimento, tamanho grande ou pequeno.</p></article>
-        <article><h3>Pedido</h3><p>Confira tamanho, cor e modelo antes de finalizar. O pedido só é confirmado após o pagamento.</p></article>
-        <article><h3>Atendimento</h3><p>Dúvidas e comprovantes devem ser enviados para o WhatsApp 11 91303-4323.</p></article>
-      </div>
+    <section class="section policies">
+      <h2>Políticas da loja</h2>
+      <p>Produtos vendidos sob encomenda. Prazo médio de entrega: <b>25 a 35 dias</b>.</p>
+      <p>Não fazemos troca por arrependimento, caimento, tamanho grande/pequeno escolhido pelo cliente ou por não ter curtido pessoalmente.</p>
+      <p>Antes de finalizar o pedido, confira tamanho, cor, modelo e endereço.</p>
     </section>
   </main>
 
-  <aside class="cart" id="cartPanel" aria-hidden="true">
-    <div class="cart-header">
-      <h2>Seu carrinho</h2>
-      <button id="closeCart" class="icon-btn">×</button>
-    </div>
-    <div id="cartItems" class="cart-items"></div>
-    <div class="cart-footer">
-      <div class="total"><span>Total</span><strong id="cartTotal">R$ 0,00</strong></div>
-      <form id="orderForm" class="order-form">
-        <input required id="customerName" placeholder="Seu nome" />
-        <input required id="customerPhone" placeholder="WhatsApp" />
-        <textarea required id="customerAddress" placeholder="Endereço de entrega"></textarea>
-        <button class="btn primary" type="submit">Finalizar pelo WhatsApp</button>
-      </form>
-    </div>
-  </aside>
-  <div class="overlay" id="overlay"></div>
-
   <footer>
-    <strong>Gusttavo Corres</strong>
-    <span>© 2026 - Trajado da cabeça aos pés</span>
+    <p>© Gusttavo Corres — Trajado da cabeça aos pés</p>
+    <p>WhatsApp: 11 91303-4323</p>
   </footer>
 
+  <a class="floating" target="_blank" href="https://wa.me/5511913034323">Comprar pelo WhatsApp</a>
   <script src="script.js"></script>
 </body>
 </html>
